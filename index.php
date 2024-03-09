@@ -1,2 +1,2 @@
 <?php
- header("Location view/HomePage.htm");
+ header("Location view/homePage.htm");
