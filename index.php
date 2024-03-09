@@ -1,2 +1,2 @@
 <?php
- header("./view/loginTest.html");
+ header("Location view/HomePage.htm");
