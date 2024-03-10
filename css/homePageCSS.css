@@ -25,7 +25,7 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 16px; /* Set font size to 16 pixels */
+    font-size: 16px; 
 }
 
 nav ul li a:hover {
@@ -33,7 +33,7 @@ nav ul li a:hover {
 }
 
 .logo {
-    width: 100px; /* Adjust the size according to your logo */
+    width: 100px; 
     height: auto;
 }
 
@@ -43,9 +43,9 @@ section {
 }
 
 h1 {
-    font-size: 36px; /* Adjust the font size as needed */
-    font-weight: bold; /* Make the text bold */
-    color: #fff; /* White color */
+    font-size: 36px; 
+    font-weight: bold; 
+    color: #fff; 
     margin-bottom: 20px; /* Add some spacing below the heading */
     text-transform: uppercase; /* Convert text to uppercase */
     letter-spacing: 2px; /* Add some letter spacing for emphasis */
@@ -53,23 +53,23 @@ h1 {
 
 h2 {
     font-size: 24px;
-    color: #6a1b9a; /* Purple color */
+    color: #6a1b9a; 
     margin-bottom: 20px; /* Add some spacing below the heading */
     text-transform: uppercase; /* Convert text to uppercase */
     border-bottom: 2px solid #6a1b9a; /* Add a bottom border */
-    padding-bottom: 10px; /* Add some spacing between text and border */
+    padding-bottom: 10px; /* Add spacing between text and border */
 }
 
 h3 {
-    color: #6a1b9a; /* Purple color */
-    font-size: 24px; /* Adjust the font size as needed */
-    font-weight: bold; /* Make the text bold */
+    color: #6a1b9a; 
+    font-size: 24px; 
+    font-weight: bold; 
 }
 
 p {
-    font-size: 16px; /* Adjust the font size as needed */
-    line-height: 1.6; /* Adjust the line height for better readability */
-    margin-bottom: 20px; /* Add some spacing below paragraphs */
+    font-size: 16px; 
+    line-height: 1.6; 
+    margin-bottom: 20px; 
 }
 
 #methods {
