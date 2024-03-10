@@ -1,3 +1,15 @@
+-- Drop tables if they exist
+DROP TABLE IF EXISTS UserRoles;
+DROP TABLE IF EXISTS WellnessPlans;
+DROP TABLE IF EXISTS AnalyticsData;
+DROP TABLE IF EXISTS MeditationSession;
+DROP TABLE IF EXISTS WellnessTips;
+DROP TABLE IF EXISTS RelaxationExercises;
+DROP TABLE IF EXISTS Instructor;
+DROP TABLE IF EXISTS Users;
+DROP TABLE IF EXISTS Roles;
+
+
 -- Create Roles table
 CREATE TABLE Roles (
     role_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -11,6 +23,7 @@ INSERT IGNORE INTO Roles (role_name) VALUES ('admin'), ('instructor'), ('standar
 CREATE TABLE Users (
     user_id INT PRIMARY KEY AUTO_INCREMENT,
     userName VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE, -- New column for email
     firstName VARCHAR(100),
     lastName VARCHAR(100),
     country VARCHAR(50),

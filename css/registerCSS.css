@@ -7,7 +7,7 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #f0f0f0;
-    animation: changeBackground 10s infinite; /* Apply the animation */
+    animation: changeBackground 18s infinite; /* Apply the animation */
 }
 
 .container {
@@ -19,8 +19,8 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 80%;
-    max-width: 600px;
-    padding: 20px; /* Add padding to create space around the items */
+    max-width: 740px;
+    padding: 17px; /* Add padding to create space around the items */
 }
 
 .image {
@@ -34,41 +34,67 @@ body {
 }
 
 .form {
-    flex: 1;
-    padding: 20px;
+    flex: 1.4;
+    padding: 12px;
     position: relative;
 }
 
+.form-content{
+    display: flex;
+    justify-content: space-between;
+}
+
+
 .form h2 {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
     text-align: center;
     color: #800080; /* Purple header text */
 }
 
 .form input[type="email"],
 .form input[type="text"],
-.form input[type="password"] {
-    width: 100%;
+.form input[type="password"],
+.form input[type="date"],
+.form select[name="gender"] {
+    width: 92%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ffa500; /* Orange border */
+    border: 1px solid #d65deb; /* Orange border */
     border-radius: 5px;
     box-sizing: border-box;
 }
 
-.form input[type="submit"] {
-    width: 100%;
+.form button[type="submit"] {
+    width: 40%;
     padding: 10px;
     border: none;
     border-radius: 5px;
     background-color: #ff69b4; /* Pink button background */
     color: #fff;
+    font-weight: bold;
+    font-size: 14pt;
     cursor: pointer;
     margin-bottom: 10px;
+   
+    height: 37px;
+
 }
 
-.form input[type="submit"]:hover {
-    background-color: #0000ff; /* Blue button background on hover */
+.form .reg-other{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+   
+}
+
+.to-login{
+    display: flex;
+    align-items: center;
+}
+
+
+.form button[type="submit"]:hover {
+    background-color: #363678; /* Blue button background on hover */
 }
 
 .form .forgot-password {
@@ -77,8 +103,21 @@ body {
 }
 
 .form .forgot-password a {
-    color: #0000ff; /* Blue link color */
+    color:  #363678; /* Blue link color */
     text-decoration: none;
+}
+
+.register-actions{
+    display: flex;
+    justify-content: 
+    space-between;
+}
+.first-col{
+    flex: 1;
+}
+
+.second-col{
+    flex: 1;
 }
 
 @keyframes changeBackground {
