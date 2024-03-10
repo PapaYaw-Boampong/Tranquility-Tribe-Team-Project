@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Execute statement
         if ($stmt->execute()) {
             echo "User registered successfully.";
-            header("Location: ../view/homePage.php")
+            header("Location: ../view/homePage.php");
         } else {
             echo "Error: " . $stmt->error;
         }
