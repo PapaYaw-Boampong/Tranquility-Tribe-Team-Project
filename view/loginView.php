@@ -28,6 +28,9 @@
     <div class="forgot-password">
       <a href="#">Forgot password?</a>
     </div>
+    <div class="register">
+      <a href="registerView.php">Join us</a>
+    </div>
   </div>
 </div>
 
