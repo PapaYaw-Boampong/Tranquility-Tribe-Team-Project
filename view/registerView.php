@@ -69,7 +69,7 @@
 
                 <div class="register-actions">
                     <div class="to-login">
-                        <a href="#" id="to-login-link">Log in?</a>
+                        <a href="loginView.php" id="to-login-link">Log in?</a>
                     </div>
 
                     <button type="submit" > Register </button>

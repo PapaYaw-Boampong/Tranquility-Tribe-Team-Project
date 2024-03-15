@@ -25,6 +25,7 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-size: 16px; 
 }
 
 nav ul li a:hover {
@@ -32,13 +33,43 @@ nav ul li a:hover {
 }
 
 .logo {
-    width: 100px; /* Adjust the size according to your logo */
+    width: 100px; 
     height: auto;
 }
 
 section {
     padding: 20px;
     text-align: center;
+}
+
+h1 {
+    font-size: 36px; 
+    font-weight: bold; 
+    color: #fff; 
+    margin-bottom: 20px; /* Add some spacing below the heading */
+    text-transform: uppercase; /* Convert text to uppercase */
+    letter-spacing: 2px; /* Add some letter spacing for emphasis */
+}
+
+h2 {
+    font-size: 24px;
+    color: #6a1b9a; 
+    margin-bottom: 20px; /* Add some spacing below the heading */
+    text-transform: uppercase; /* Convert text to uppercase */
+    border-bottom: 2px solid #6a1b9a; /* Add a bottom border */
+    padding-bottom: 10px; /* Add spacing between text and border */
+}
+
+h3 {
+    color: #6a1b9a; 
+    font-size: 24px; 
+    font-weight: bold; 
+}
+
+p {
+    font-size: 16px; 
+    line-height: 1.6; 
+    margin-bottom: 20px; 
 }
 
 #methods {
@@ -71,3 +102,5 @@ footer {
     padding: 20px;
     text-align: center;
 }
+
+
