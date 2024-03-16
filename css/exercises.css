@@ -62,3 +62,11 @@ footer {
     padding: 20px;
     text-align: center;
 }
+.logo{
+    width: 100px; 
+    height: auto;
+}
+
+.fa-arrow-left{
+    margin-top: 500px;
+}
