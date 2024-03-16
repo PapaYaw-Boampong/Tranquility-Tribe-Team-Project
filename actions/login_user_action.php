@@ -5,10 +5,11 @@ ini_set('display_errors', 1);
 
 
 include('../settings/connection.php');
-// echo "Successfully";
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    global $conn;
 
-if (isset($_POST['loginForm'])) {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
     $username = mysqli_real_escape_string($conn, $_POST['username']);

@@ -43,7 +43,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     // Submit the form data using fetch
     fetch('../actions/login_user_action.php', {
         method: 'POST',
-        body: new FormData(document.getElementById('login-form'))
+        body: new FormData(this)
     })
     .then(response => {
         if (response.ok) {

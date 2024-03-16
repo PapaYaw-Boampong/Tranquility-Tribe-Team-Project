@@ -1,7 +1,5 @@
 <?php
 
-
-//THIS IS WHAT I USED TO CHECK IF STUFF WAS WORKING
 $servername = "localhost";
 $database = "TT2025";
 $username = "root";
@@ -25,9 +23,9 @@ if (!$conn) {
 // $password = ""; 
 
 
-// $con = mysqli_connect($servername, $username, $password, $database);
+// $conn = mysqli_connect($servername, $username, $password, $database);
 
-// if (!$con) {
+// if (!$conn) {
 //   die("Connection failed: " . mysqli_connect_error());
 // }
 

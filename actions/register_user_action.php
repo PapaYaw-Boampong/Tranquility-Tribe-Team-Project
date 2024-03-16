@@ -9,9 +9,10 @@ $responseCodes = [
 
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+    error_log("POST data: " . print_r($_POST, true));
     // Include database connection file
     include('../settings/connection.php');
+
 
     // Get form data
     $fname = $_POST["fname"];
@@ -30,12 +31,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     // Prepare insert statement
-    $sql = "INSERT INTO Users (userName, email, firstName, lastName, country, gender, date_of_birth, occupation, interest, registration_date) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_DATE)";
+    $sql = "INSERT INTO Users (userName, email, firstName, lastName, country, gender, date_of_birth, occupation, interest_id, registration_date) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_DATE,?)";
 
     if ($stmt = $conn->prepare($sql)) {
         // Bind parameters
-        $stmt->bind_param("sssssssss", $username, $email, $fname, $lname, $country, $gender, $dob, $occupation, $interests);
+        $stmt->bind_param("ssssssssss", $username, $email, $fname, $lname, $country, $gender, $dob, $occupation, $interests, $hashedPasswordhashe);
 
         // Execute statement
         if ($stmt->execute()) {
@@ -60,8 +61,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         http_response_code($responseCodes['error']);
         echo json_encode(['message' => 'Error preparing statement: ' . $conn->error]);
     }
-} else {
-    // Return redirect response
-    http_response_code($responseCodes['redirect']);
-    echo json_encode(['message' => 'Redirecting to registration form.']);
-}
+} 

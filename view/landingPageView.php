@@ -10,12 +10,20 @@
 </head>
 <body>
     <header>
+        <nav>
+            <ul>
+                <li><a href="../view/aboutUs.htm">About Us</a></li>
+                <li><a href="../login/loginView.php">Login</a></li>
+                <li><a href="../login/registerView.php">Sign up</a></li>
+            </ul>
+        </nav>
         <img src="../assets/team_photos/Team Logo 2.png" alt="Tranquility Tribe Logo" class="logo">
         <h1>Welcome to Tranquility Tribe</h1>
         <p>Tranquility Tribe is dedicated to helping individuals achieve a state of mental and physical peace. Our programs are designed to provide practical tools and resources to promote healthy living. We offer a range of classes, workshops, and retreats to help individuals manage stress and develop mindfulness practices</p>
     </header>
     
     <section id="methods">
+        <h2>Our Methods</h2>
         <div class="feature">
             <img src="../assets/team_photos/yoga.png" alt="Guided Meditation">
             <h3>Guided Meditation</h3>

@@ -10,7 +10,7 @@
 
 <div class="container">
   <div class="image homepage-view">
-    <img src="../assets/team photos/Team Logo 2.png" alt="Tranquility Tribe Logo">
+    <img src="../assets/team_photos/Team Logo 2.png" alt="Tranquility Tribe Logo">
   </div>
   <div class="form">
     <h2> Tranquility Tribe Account Login</h2>
