@@ -8,6 +8,7 @@ header {
     background-color: #6a1b9a; /* Purple background */
     padding: 20px;
     text-align: center;
+    color: white;
 }
 
 main {
@@ -22,6 +23,41 @@ main {
 
 .meditation-session h2 {
     margin-top: 0;
+}
+
+.meditation {
+    border: 0px;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 15px;
+    height: 300px;
+    width: 600px;
+    margin-top: -5px;
+    margin-bottom: 50px; /* Adjust the margin-bottom value to add space between exercise buttons */
+    background-size: cover;
+    background-position: center;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.3s, background-position 0.3s;
+}
+
+.meditation:hover {
+    transform: scale(1.05);
+    background-position: center 10%;
+}
+.meditation h2 {
+    margin-top: 0px;
+    color: white;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    padding: 10px;
+}
+
+.meditation .description {
+    color: pink;
+    margin-top: 190px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    font-size: 16px;
 }
 
 button {
