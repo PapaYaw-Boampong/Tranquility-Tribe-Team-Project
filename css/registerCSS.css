@@ -55,7 +55,8 @@ body {
 .form input[type="text"],
 .form input[type="password"],
 .form input[type="date"],
-.form select[name="gender"] {
+.form select[name="gender"],
+.form select[name="interests"]  {
     width: 92%;
     padding: 10px;
     margin-bottom: 15px;

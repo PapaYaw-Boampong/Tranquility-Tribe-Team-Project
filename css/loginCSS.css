@@ -76,7 +76,17 @@ body {
     margin-top: 10px;
 }
 
+.form .register {
+    text-align: center;
+    margin-top: 10px;
+}
+
 .form .forgot-password a {
+    color: #0000ff; /* Blue link color */
+    text-decoration: none;
+}
+
+.form .register a {
     color: #0000ff; /* Blue link color */
     text-decoration: none;
 }
