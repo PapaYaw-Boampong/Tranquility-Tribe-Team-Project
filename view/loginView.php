@@ -1,3 +1,6 @@
+<!-- Login Page:
+For returning users, provide a login form where they can enter their registered email address/username and 
+password to access their account.-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +28,9 @@
       <input type="password" id="password" name="password" required>
       <input type="submit" value="SIGN IN">
     </form>
+    <div class="register">
+      <a href="../view/registerView.php">Join us</a>
+    </div>
   </div>
 </div>
 
