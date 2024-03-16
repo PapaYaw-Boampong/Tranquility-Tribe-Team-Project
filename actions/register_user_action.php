@@ -1,9 +1,18 @@
 <?php
+
+// Define response codes
+$responseCodes = [
+    'success' => 200,
+    'error' => 500,
+    'redirect' => 302
+];
+
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
     // Include database connection file
-    include_once "../settings/connection.php";
-    global $conn;
+    include('../settings/connection.php');
+
     // Get form data
     $fname = $_POST["fname"];
     $lname = $_POST["lname"];
@@ -17,46 +26,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
     $confirmPassword = $_POST["confirmPassword"];
 
-    // Validate form data (you can add more validation if needed)
-
-    // Check if passwords match
-    if ($password !== $confirmPassword) {
-        echo "Passwords do not match.";
-        exit;
-    }
-
     // Hash password
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
     // Prepare insert statement
     $sql = "INSERT INTO Users (userName, email, firstName, lastName, country, gender, date_of_birth, occupation, interest, registration_date) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_DATE)";
 
     if ($stmt = $conn->prepare($sql)) {
-
         // Bind parameters
         $stmt->bind_param("sssssssss", $username, $email, $fname, $lname, $country, $gender, $dob, $occupation, $interests);
 
         // Execute statement
         if ($stmt->execute()) {
-            echo "User registered successfully.";
-            header("Location: ../view/homePage.php");
+            // Close statement
+            $stmt->close();
+            // Close connection
+            $conn->close();
+            // Return success response
+            http_response_code($responseCodes['success']);
+            echo json_encode(['message' => 'User registered successfully.']);
         } else {
-            echo "Error: " . $stmt->error;
+            // Close statement
+            $stmt->close();
+            // Close connection
+            $conn->close();
+            // Return error response with detailed error message
+            http_response_code($responseCodes['error']);
+            echo json_encode(['message' => 'Error registering user: ' . $conn->error]);
         }
-
-        // Close statement
-        $stmt->close();
-
     } else {
-        echo "Error: " . $mysqli->error;
+        // Return error response with detailed error message
+        http_response_code($responseCodes['error']);
+        echo json_encode(['message' => 'Error preparing statement: ' . $conn->error]);
     }
-
-    // Close connection
-    $mysqli->close();
 } else {
-    // Redirect to registration form
-    header("Location: ../registration_form.php");
-    exit;
+    // Return redirect response
+    http_response_code($responseCodes['redirect']);
+    echo json_encode(['message' => 'Redirecting to registration form.']);
 }
-?>

@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guided Meditation Library</title>
-    <link rel="stylesheet" href="meditation.css">
+    <link rel="stylesheet" href="../css/meditation.css">
 </head>
 <body>
     <header>
-        <img src="Team Logo 2.png" alt="Tranquility Tribe Logo" class="logo">
+        <img src="../assets/team photos/Team Logo 2.png" alt="Tranquility Tribe Logo" class="logo">
         <h1>Guided Meditation Library</h1>
     </header>
     <main id="meditationContainer">
@@ -17,6 +17,6 @@
     <footer>
         <p>&copy; Guided Meditation Library</p>
     </footer>
-    <script src="meditation.js"></script>
+    <script src="../js/meditation.js"></script>
 </body>
 </html>

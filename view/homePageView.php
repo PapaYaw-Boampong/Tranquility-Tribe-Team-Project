@@ -13,8 +13,8 @@
         <nav>
             <ul>
                 <li><a href="../view/aboutUs.htm">About Us</a></li>
-                <li><a href="../view/loginView.php">Login</a></li>
-                <li><a href="../view/registerView.php">Sign up</a></li>
+                <li><a href="../login/loginView.php">Login</a></li>
+                <li><a href="../login/registerView.php">Sign up</a></li>
             </ul>
         </nav>
         <img src="../assets/team photos/Team Logo 2.png" alt="Tranquility Tribe Logo" class="logo">

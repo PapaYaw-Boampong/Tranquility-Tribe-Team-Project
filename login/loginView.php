@@ -9,7 +9,7 @@
 <body>
 
 <div class="container">
-  <div class="image">
+  <div class="image homepage-view">
     <img src="../assets/team photos/Team Logo 2.png" alt="Tranquility Tribe Logo">
   </div>
   <div class="form">
@@ -33,31 +33,10 @@
     </div>
   </div>
 </div>
-
-<script>
-document.getElementById("loginForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent the default form submission
-
-    var emailInput = document.getElementById("email").value;
-    var passwordInput = document.getElementById("password").value;
-
-    var emailExpression = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    var passwordExpression = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
-
-    if (!emailExpression.test(emailInput)) {
-        alert("Please enter a valid email address");
-        return false;
-    }
-
-    if (!passwordExpression.test(passwordInput)) {
-        alert("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number");
-        return false;
-    }
-
-    // If both email and password are valid, the user can proceed with form submission
-    this.submit();
-});
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="../js/login.js">
 </script>
+
 
 </body>
 </html>

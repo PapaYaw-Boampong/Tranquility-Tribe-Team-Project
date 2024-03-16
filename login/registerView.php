@@ -11,12 +11,12 @@
 <body>
 
     <div class="container">
-        <div class="image">
+        <div class="image homepage-view">
             <img src="../assets/team photos/Team Logo 2.png" alt="Tranquility Tribe Logo">
         </div>
         <div class="form">
             <h2>Join Tranquility Tribe!</h2>
-            <form action="../actions/register_user_action.php" method="post" id="registerForm">
+            <form action="#" method="post" id="registerForm">
 
                 <div class="form-content">
 
@@ -54,8 +54,12 @@
                         <label for="occupation">Occupation</label>
                         <input type="text" id="occupation" name="occupation" required>
 
-                        <label for="interests">Interests</label>
-                        <input type="text" id="interests" name="interests" required>
+                     
+                        <div class="reg-other">
+                            <label for="insterests">Interests</label>
+                            <select id="interests" name="interests" required>
+                            </select>
+                        </div>
 
                         <label for="password">Password</label>
                         <input type="password" id="password" name="password" required>
@@ -79,27 +83,8 @@
             </form>
         </div>
     </div>
-
-    <script>
-        document.getElementById("registerForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            // Get form field values
-            var fullname = document.getElementById("fullname").value;
-            var username = document.getElementById("username").value;
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
-            var confirmPassword = document.getElementById("confirmPassword").value;
-            var country = document.getElementById("country").value;
-            var gender = document.getElementById("gender").value;
-            var dob = document.getElementById("dob").value;
-            var occupation = document.getElementById("occupation").value;
-            var interests = document.getElementById("interests").value;
-
-            // If everything is valid, you can proceed with form submission
-            this.submit();
-        });
-    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../js/register.js"></script>
 
 </body>
 
