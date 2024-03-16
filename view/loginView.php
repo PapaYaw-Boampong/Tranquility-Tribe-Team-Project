@@ -25,9 +25,6 @@
       <input type="password" id="password" name="password" required>
       <input type="submit" value="SIGN IN">
     </form>
-    <div class="forgot-password">
-      <a href="#">Forgot password?</a>
-    </div>
   </div>
 </div>
 

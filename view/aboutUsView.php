@@ -1,3 +1,9 @@
+<!--About Us Page:
+This provides detailed information about the organization or team behind the website.
+It may also outline the organization's mission statement, values, and objectives.
+It may include personal stories, or testimonials to further enhance authenticity and credibility.
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
