@@ -1,0 +1,167 @@
+body {
+    /* font-family: Arial, sans-serif; */
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    /* background-color: #d1b9d0; */
+    /* background-color: rgb(223, 134, 187); */
+    background-color: #e0e0e0; 
+    /* color: #333; */
+    font-family: 'Arial', sans-serif;
+    font-size: 20px; 
+}
+header {
+    background-color: #6a1b9a; /* Purple background */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    /* height: 200px;
+    display: block; */
+    
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px; 
+}
+
+nav ul li a:hover {
+    color: #ff4081; /* Pink hover color */
+}
+
+.logo {
+    width: 100px; 
+    height: auto;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+
+
+.tips {
+    background-color: white;
+    flex:70%;
+}
+
+.articles-and-infographics {
+    margin-left: 20px;
+    background-color: white;
+    height:100px;
+    width:100px;
+    flex:30%;
+    margin-top: 250px;
+    margin-bottom: 150px;
+}
+
+.articles{
+    background-color: white;
+}
+
+.art{
+    font-style: normal;
+}
+
+.videos {
+    display: inline-block; 
+    width: 45%; 
+    margin: 0 2.5%; 
+    vertical-align: top;
+}
+
+p{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 18px;
+    font-style:normal;
+    padding:10px;
+}
+
+.more-reads{
+    padding:5px;
+}
+
+.feedback-link {
+    color:#6a1b9a;
+}
+
+
+/* .more-reads:nth-last-child(-n+3) {
+    font-weight: bold; /* Makes the font bold for the last three elements with the class .more-reads */
+
+h2{
+    color:#6a1b9a;
+    padding: 10px;
+    font-style: normal;
+}
+.vertical-space {
+    margin-right: 90px; /* Adjust this value to increase or decrease the vertical space */
+}
+
+
+h3{
+    /* color:rgb(187, 20, 176); */
+    color:#6a1b9a;
+    font-style: normal;
+    padding:10x;
+    margin-left: 10px;
+
+}
+.tips ul img {
+    width: 400px; 
+    height: 400px; 
+    margin-right: 10px; 
+    vertical-align: middle;
+}
+.tip-item {
+    margin-left: 0;
+}
+
+footer {
+    background-color: #ff69b4; /* Pink footer */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
+/* article{
+    display: flex;
+     box-shadow: 3px 3px 3px 3px  #888888;
+    padding: 5px 5px 5px 5px;
+} */
+
+.platforms {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.videos,
+.social-media {
+    flex-basis: 48%; /* Adjust as needed */
+    margin-bottom: 20px; /* Add some margin between the elements */
+}
+
+
+
+
+
