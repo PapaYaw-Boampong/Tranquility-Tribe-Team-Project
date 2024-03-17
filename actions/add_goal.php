@@ -1,7 +1,7 @@
 <?php
 include '../settings/connection.php';
 
-$response = array('success' => false, 'message' => '', 'goal_text' => '');
+$response = array('success' => false, 'goal_text' => '', 'status_text' => 'incomplete');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $goalName = $_POST['goal'];
@@ -13,9 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
-        $_SESSION['goal_added'] = true;
         $response['success'] = true;
-        $response['message'] = $goalName . " added successfully.";
         $response['goal_text'] = $goalName;
 
     } else {

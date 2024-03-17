@@ -5,15 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Personalized Wellness Plan</title>
   <link rel="stylesheet" href="../css/personalizedPlanCSS.css">
+  <link rel="stylesheet" href="../css/nav-bar.css">
 
   <!-- Include Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <header>
-    <h1>Your Journey to Wellness Begins Here</h1>
-  </header>
-  
+          <div class="nav-bar">
+                  <div class="nav-bar-title">
+                      My Wellness 
+                  </div>
+
+                  <nav>
+                      <ul >
+                          <li class="<?php echo ($message === 'myWellness' || $message === '') ? 'active' : '';?>"><a href="personalizedPlanView.php">My Wellness</a></li>
+                          <li class="<?php echo ($message === 'relaxationExercise' || $message === '') ? 'active' : '';?>"><a href="exercisesPageView.php?msg=relaxationExercise">Relaxation and Meditation Hub</a></li>
+                          <li class="<?php echo ($message === 'wellnessTips' || $message === '') ? 'active' : '';?>"><a href="wellness.php?msg=wellnessTips"> Wellness Tips</a></li>
+                          <li class="<?php echo ($message === 'profile' || $message === '') ? 'active' : '';?>">
+                              <a href="profile.php?msg=profile">Profile </a>
+                          </li>
+                      </ul>
+                  </nav>
+          </div>
+    </header>
   <main>
     <section class="wellness-plans">
       <h2>My Wellness Plan</h2>

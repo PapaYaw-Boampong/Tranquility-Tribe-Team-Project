@@ -83,7 +83,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 // You can display a message to the user using a modal or alert
             }
         })
-        
         .catch(error => {
             console.error('Error:', error);
             // Handle any unexpected errors if needed

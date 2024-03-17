@@ -1,13 +1,10 @@
 -- Drop tables if they exist
 DROP TABLE IF EXISTS UserRoles;
-DROP TABLE IF EXISTS WellnessPlans;
-DROP TABLE IF EXISTS AnalyticsData;
-DROP TABLE IF EXISTS MeditationSession;
-DROP TABLE IF EXISTS WellnessTips;
 DROP TABLE IF EXISTS RelaxationExercises;
 DROP TABLE IF EXISTS Users;
 DROP TABLE IF EXISTS Roles;
 DROP TABLE IF EXISTS Interests;
+DROP TABLE IF EXISTS Goals;
 
 -- Create Roles table
 CREATE TABLE Roles (
@@ -53,7 +50,7 @@ CREATE TABLE Users (
     gender ENUM('male', 'female', 'other') DEFAULT 'male',
     date_of_birth DATE,
     occupation VARCHAR(100),
-    registration_date DATE,
+    registration_date DATE DEFAULT CURRENT_TIMESTAMP,
     last_login TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     interest_id INT,
     FOREIGN KEY (interest_id) REFERENCES Interests(interest_id) -- Reference to Interests table
@@ -68,25 +65,6 @@ CREATE TABLE UserRoles (
     PRIMARY KEY (user_id, role_id)
 );
 
--- Create MeditationSession table
-CREATE TABLE MeditationSession (
-    session_id INT PRIMARY KEY AUTO_INCREMENT, 
-    title VARCHAR(100), 
-    description TEXT, 
-    duration TIME, 
-    rating INT,  
-    reviews INT,  
-    url VARCHAR(100)
-);
-
--- Create WellnessTips table
-CREATE TABLE WellnessTips (
-    tip_id INT PRIMARY KEY AUTO_INCREMENT,  
-    title VARCHAR(100),  
-    category VARCHAR(50),  
-    content TEXT
-);
-
 -- Create RelaxationExercises table
 CREATE TABLE RelaxationExercises (
     exercise_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -96,28 +74,11 @@ CREATE TABLE RelaxationExercises (
     url VARCHAR(100)
 );
 
--- Create WellnessPlans table
-CREATE TABLE WellnessPlans (
-    plan_id INT PRIMARY KEY AUTO_INCREMENT,
-    user_id INT NOT NULL, 
-    creation_date DATE,
-    FOREIGN KEY (user_id) REFERENCES Users(user_id)
-);
-
 -- Create Goals table
 CREATE TABLE Goals (
     goal_id INT PRIMARY KEY AUTO_INCREMENT,
-    plan_id INT NOT NULL,
+    user_id INT,
+    goal_status ENUM('complete', 'incomplete') DEFAULT 'incomplete',
     goal_text TEXT,
-    FOREIGN KEY (plan_id) REFERENCES WellnessPlans(plan_id)
-);
-
-
--- Create AnalyticsData table
-CREATE TABLE AnalyticsData (
-    analytics_id INT PRIMARY KEY AUTO_INCREMENT,
-    user_id INT NOT NULL,
-    date DATE,
-    metrics INT,
     FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
