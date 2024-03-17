@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* header {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+} */
+
+main {
+    padding: 20px;
+    margin-top: 150px;
+}
+
+.profile-pic-container{
+width: 150px;
+height: 150px;
+margin-left: 34%;
+border-radius: 50%; /* Makes the container circular */
+overflow: hidden; /* Ensures the image doesn't exceed the container boundaries */
+margin-bottom: 20px;
+}
+
+
+
+.profile-pic-container img {
+width: 100%;
+height: 100%;
+object-fit: cover; /* Ensures the image covers the entire container */
+}
+
+.profile-info {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.bioLabel{
+    margin-top: 18px;
+
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+textarea {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.submit {
+    background-color: purple;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    margin-left: 43%;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:  #ff69b4;
+}
+
+/* footer {
+    background-color: #0664df;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+} */
