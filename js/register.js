@@ -52,7 +52,8 @@ document.getElementById("registerForm").addEventListener("submit", function(even
 
     // Define regular expressions for validation
     var emailRegex = /^\S+@\S+\.\S+$/;
-    var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+    var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W\_])[A-Za-z\d\W\_]{8,}$/;
+
 
     // Basic form validation
     if (!fname || !lname || !username || !email || !password || !confirmPassword || !country || !gender || !dob || !occupation || !interests) {

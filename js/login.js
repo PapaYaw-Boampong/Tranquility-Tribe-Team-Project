@@ -1,12 +1,12 @@
 document.getElementById("loginForm").addEventListener("submit", function(event) {
 
     event.preventDefault(); // Prevent form submission
-
+    var name = document.getElementById("username").value;
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
 
     var emailExpression = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    var passwordExpression = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+    var passwordExpression = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W\_])[A-Za-z\d\W\_]{8,}$/;
 
     if (!emailExpression.test(email)) {
         swal({
@@ -28,7 +28,6 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         return;
     }
 
-    // Validate form data
     if (email.trim() === '' || password.trim() === '') {
         // Show SweetAlert for empty fields
         swal({
@@ -40,35 +39,41 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         return;
     }
 
-    // Submit the form data using fetch
     fetch('../actions/login_user_action.php', {
         method: 'POST',
         body: new FormData(this)
     })
     .then(response => {
         if (response.ok) {
-            return response.json();
-           
+            return response.json(); // Parse JSON response for successful requests
         } else {
-            // Show SweetAlert for login error
             swal({
                 title: 'Error!',
-                text: 'Invalid email or password.',
+                text: 'An unexpected error occurred. Please try again later.',
                 icon: 'error',
                 button: 'OK'
             });
+            return;
         }
     })
-
     .then(data => {
-        // Handle the success status returned by the PHP file
-        if (data.success) {
-
-            // Redirect to another page after successful login
-            window.location.href = '../';
+        console.log(data);
+        // Handle success response
+        if (data.message === "Login successful") {
+            swal({
+                title: 'Success!',
+                text: 'Welcome ' + name,
+                icon: 'success',
+                button: 'OK'
+            })
+            .then((value) => {
+                // After SweetAlert is dismissed, redirect to another page
+                if (value) {
+                    window.location.href = '../view/homePageView.php?msg=myWellness';
+                }
+            });
         } else {
-      
-            // Display a SweetAlert for login error
+            // Handle failure response
             swal({
                 title: 'Error!',
                 text: 'Invalid email or password.',
@@ -78,7 +83,8 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         }
     })
     .catch(error => {
-        console.error('Error:', error);
+        // Handle fetch errors
+        console.error('Fetch error:', error);
         // Show SweetAlert for unexpected error
         swal({
             title: 'Error!',
@@ -87,6 +93,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
             button: 'OK'
         });
     });
+    
 });
 
 document.addEventListener("DOMContentLoaded", function() {

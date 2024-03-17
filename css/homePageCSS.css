@@ -3,98 +3,59 @@ body {
     margin: 0;
     padding: 0;
     background-color: #e0e0e0; /* Light gray background */
+    height: 100%;
+    width: 100%;
+   
 }
 
-header {
-    background-color: #6a1b9a; /* Purple background */
+.nav-bar{
+    display: flex;
+    background-color: #6a1b9a;
+    justify-content: space-between;
     color: #fff;
-    padding: 20px;
-    text-align: center;
+    font-size: 14pt;
+
 }
+
 
 nav ul {
     list-style-type: none;
     padding: 0;
+    border: #e0e0e0;
+    margin-right: 20px;
 }
 
 nav ul li {
     display: inline;
     margin-right: 20px;
+    border-radius: 9%;
+    padding: 8pt;
 }
 
-nav ul li a {
+nav ul li:hover {
+   background-color: #7d4c9c;
+
+}
+
+nav ul li.active {
+    background-color: #7d4c9c;
+}
+
+nav ul li a{
     color: #fff;
     text-decoration: none;
-    font-size: 16px; 
 }
 
-nav ul li a:hover {
-    color: #ff4081; /* Pink hover color */
-}
-
-.logo {
-    width: 100px; 
-    height: auto;
-}
-
-section {
-    padding: 20px;
-    text-align: center;
-}
-
-h1 {
-    font-size: 36px; 
-    font-weight: bold; 
-    color: #fff; 
-    margin-bottom: 20px; /* Add some spacing below the heading */
-    text-transform: uppercase; /* Convert text to uppercase */
-    letter-spacing: 2px; /* Add some letter spacing for emphasis */
-}
-
-h2 {
-    font-size: 24px;
-    color: #6a1b9a; 
-    margin-bottom: 20px; /* Add some spacing below the heading */
-    text-transform: uppercase; /* Convert text to uppercase */
-    border-bottom: 2px solid #6a1b9a; /* Add a bottom border */
-    padding-bottom: 10px; /* Add spacing between text and border */
-}
-
-h3 {
-    color: #6a1b9a; 
-    font-size: 24px; 
-    font-weight: bold; 
-}
-
-p {
-    font-size: 16px; 
-    line-height: 1.6; 
-    margin-bottom: 20px; 
-}
-
-#methods {
+.user-name{
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
+    align-self:center;
+    font-size: 20pt;
+    font-weight: 300;
+    padding-left: 15pt;
 }
 
-.feature {
-    flex-basis: 30%; /* Adjust the width of each feature */
-    margin: 20px;
-    background-color: #fff; /* White background for features */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-}
 
-.feature img {
-    max-width: 100%;
-    height: auto;
-}
 
-.feature h3 {
-    color: #6a1b9a; /* Purple heading color */
-}
 
 footer {
     background-color: #ff69b4; /* Pink footer */
@@ -102,5 +63,8 @@ footer {
     padding: 20px;
     text-align: center;
 }
+
+
+
 
 

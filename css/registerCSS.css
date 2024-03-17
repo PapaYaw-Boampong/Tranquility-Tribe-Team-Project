@@ -60,7 +60,7 @@ body {
     width: 92%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #d65deb; /* Orange border */
+    border: 1px solid #d65deb;
     border-radius: 5px;
     box-sizing: border-box;
 }
@@ -123,18 +123,18 @@ body {
 
 @keyframes changeBackground {
     0% {
-        background-image: url("../assets/team photos/yoga.webp");
+        background-image: url("../assets/team_photos/yoga.webp");
     } 
     25% {
-        background-image: url("../assets/team photos/greenJuice.avif");
+        background-image: url("../assets/team_photos/greenJuice.avif");
     }
     50% {
-        background-image: url('../assets/team photos/goodsleep.jpg');
+        background-image: url('../assets/team_photos/goodsleep.jpg');
     }
     75% {
-        background-image: url('../assets/team photos/skipping.jpg');
+        background-image: url('../assets/team_photos/skipping.jpg');
     }
     100% {
-        background-image: url('../assets/team photos/fruits.jpg');
+        background-image: url('../assets/team_photos/fruits.jpg');
     }
 }

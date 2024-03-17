@@ -7,7 +7,7 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #f0f0f0;
-    animation: changeBackground 10s infinite; /* Apply the animation */
+    animation: changeBackground 18s infinite; /* Apply the animation */
 }
 
 .container {
@@ -51,7 +51,7 @@ body {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ffa500; /* Orange border */
+    border: 1px solid#d65deb; /* Orange border */
     border-radius: 5px;
     box-sizing: border-box;
 }
@@ -71,10 +71,6 @@ body {
     background-color: #0000ff; /* Blue button background on hover */
 }
 
-.form .forgot-password {
-    text-align: center;
-    margin-top: 10px;
-}
 
 .form .register {
     text-align: center;
@@ -93,18 +89,18 @@ body {
 
 @keyframes changeBackground {
     0% {
-        background-image: url("../assets/team photos/yoga.webp");
+        background-image: url("../assets/team_photos/yoga.webp");
     } 
     25% {
-        background-image: url("../assets/team photos/greenJuice.avif");
+        background-image: url("../assets/team_photos/greenJuice.avif");
     }
     50% {
-        background-image: url('../assets/team photos/goodsleep.jpg');
+        background-image: url('../assets/team_photos/goodsleep.jpg');
     }
     75% {
-        background-image: url('../assets/team photos/skipping.jpg');
+        background-image: url('../assets/team_photos/skipping.jpg');
     }
     100% {
-        background-image: url('../assets/team photos/fruits.jpg');
+        background-image: url('../assets/team_photos/fruits.jpg');
     }
 }
