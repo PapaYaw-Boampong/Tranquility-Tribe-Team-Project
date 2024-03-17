@@ -5,10 +5,9 @@ DROP TABLE IF EXISTS AnalyticsData;
 DROP TABLE IF EXISTS MeditationSession;
 DROP TABLE IF EXISTS WellnessTips;
 DROP TABLE IF EXISTS RelaxationExercises;
-DROP TABLE IF EXISTS Instructor;
 DROP TABLE IF EXISTS Users;
 DROP TABLE IF EXISTS Roles;
-
+DROP TABLE IF EXISTS Interests;
 
 -- Create Roles table
 CREATE TABLE Roles (
@@ -19,30 +18,45 @@ CREATE TABLE Roles (
 -- Insert roles data
 INSERT IGNORE INTO Roles (role_name) VALUES ('admin'), ('instructor'), ('standard');
 
+-- Create Interests table
+CREATE TABLE Interests (
+    interest_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL UNIQUE
+);
+
+-- Insert preset interests
+INSERT INTO Interests (name) VALUES 
+('Relaxation Techniques'),
+('Yoga & Meditation'),
+('Positive Thinking'),
+('Creative Arts Therapy'),
+('Nature Connection'),
+('Music for Mood Boosting'),
+('Exercise for Health'),
+('Balanced Nutrition'),
+('Stress Relief'),
+('Better Sleep Habits'),
+('Happiness & Joy Practices'),
+('Self-Care Tips'),
+('Supportive Communities'),
+('Mental Health Awareness'),
+('Anxiety & Mood Management');
+
 -- Create Users table
 CREATE TABLE Users (
     user_id INT PRIMARY KEY AUTO_INCREMENT,
     userName VARCHAR(50) NOT NULL UNIQUE,
-    email VARCHAR(100) NOT NULL UNIQUE, -- New column for email
+    email VARCHAR(100) NOT NULL UNIQUE,
     firstName VARCHAR(100),
     lastName VARCHAR(100),
     country VARCHAR(50),
     gender ENUM('male', 'female', 'other') DEFAULT 'male',
     date_of_birth DATE,
     occupation VARCHAR(100),
-    interest VARCHAR(100),
     registration_date DATE,
-    last_login TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
-
--- Create Instructor table
-CREATE TABLE Instructor (
-    instructor_id INT PRIMARY KEY AUTO_INCREMENT,
-    user_id INT NOT NULL UNIQUE,
-    education VARCHAR(100),
-    certification VARCHAR(100),
-    experience TEXT,
-    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+    last_login TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    interest_id INT,
+    FOREIGN KEY (interest_id) REFERENCES Interests(interest_id) -- Reference to Interests table
 );
 
 -- Create UserRoles table to map users to roles
@@ -62,8 +76,7 @@ CREATE TABLE MeditationSession (
     duration TIME, 
     rating INT,  
     reviews INT,  
-    instructor_id INT NOT NULL,
-    FOREIGN KEY (instructor_id) REFERENCES Instructor(instructor_id)
+    url VARCHAR(100)
 );
 
 -- Create WellnessTips table
@@ -71,8 +84,6 @@ CREATE TABLE WellnessTips (
     tip_id INT PRIMARY KEY AUTO_INCREMENT,  
     title VARCHAR(100),  
     category VARCHAR(50),  
-    instructor_id INT NOT NULL,
-    FOREIGN KEY (instructor_id) REFERENCES Instructor(instructor_id),   
     content TEXT
 );
 
@@ -82,21 +93,25 @@ CREATE TABLE RelaxationExercises (
     title VARCHAR(100),
     description TEXT,
     category VARCHAR(50),
-    instructor_id INT NOT NULL,
-    FOREIGN KEY (instructor_id) REFERENCES Instructor(instructor_id)
+    url VARCHAR(100)
 );
 
 -- Create WellnessPlans table
 CREATE TABLE WellnessPlans (
     plan_id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT NOT NULL, 
-    goals TEXT,
-    progress TEXT,
-    metrics INT,
-    notifications TEXT,
     creation_date DATE,
     FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
+
+-- Create Goals table
+CREATE TABLE Goals (
+    goal_id INT PRIMARY KEY AUTO_INCREMENT,
+    plan_id INT NOT NULL,
+    goal_text TEXT,
+    FOREIGN KEY (plan_id) REFERENCES WellnessPlans(plan_id)
+);
+
 
 -- Create AnalyticsData table
 CREATE TABLE AnalyticsData (
