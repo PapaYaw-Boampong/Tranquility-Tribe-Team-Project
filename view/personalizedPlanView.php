@@ -1,3 +1,8 @@
+<?php
+include "../settings/core.php";
+$result = checkLogin();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

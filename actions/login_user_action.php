@@ -37,9 +37,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($row) {
         if (password_verify($password, $row['passwrd'])) {
             
-            $_SESSION['email'] = $row['user_id'];
+            $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['username'] = $row['userName'];
-    
+
             // Return success response
             http_response_code($responseCodes['success']);
             echo json_encode(['message' => 'Login successful']);

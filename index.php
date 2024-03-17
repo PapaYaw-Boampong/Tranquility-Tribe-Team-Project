@@ -1,2 +1,2 @@
 <?php
- header("Location: view/homePageView.php");
+ header("Location: view/landingPageView.php");

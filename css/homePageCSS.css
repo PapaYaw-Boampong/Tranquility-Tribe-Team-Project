@@ -8,54 +8,6 @@ body {
    
 }
 
-.nav-bar{
-    display: flex;
-    background-color: #6a1b9a;
-    justify-content: space-between;
-    color: #fff;
-    font-size: 14pt;
-
-}
-
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    border: #e0e0e0;
-    margin-right: 20px;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-    border-radius: 9%;
-    padding: 8pt;
-}
-
-nav ul li:hover {
-   background-color: #7d4c9c;
-
-}
-
-nav ul li.active {
-    background-color: #7d4c9c;
-}
-
-nav ul li a{
-    color: #fff;
-    text-decoration: none;
-}
-
-.user-name{
-    display: flex;
-    align-self:center;
-    font-size: 20pt;
-    font-weight: 300;
-    padding-left: 15pt;
-}
-
-
-
 
 footer {
     background-color: #ff69b4; /* Pink footer */
