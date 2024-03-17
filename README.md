@@ -148,6 +148,11 @@ Contains the components of the web application's user interface, responsible for
 ## PROJECT STATUS
 
 Complete
+
+## PROJECT GITHUB LINK
+
+https://github.com/PapaYaw-Boampong/Tranquility-Tribe-Team-Project
+
 ## CONTRIBUTORS
 
 Thanks goes to the following wonderful people:
