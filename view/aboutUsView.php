@@ -1,9 +1,3 @@
-<!--About Us Page:
-This provides detailed information about the organization or team behind the website.
-It may also outline the organization's mission statement, values, and objectives.
-It may include personal stories, or testimonials to further enhance authenticity and credibility.
- -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +5,7 @@ It may include personal stories, or testimonials to further enhance authenticity
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <link rel="stylesheet" href="../css/aboutUsCSS.css">
+    
 </head>
 <body>
     <header>

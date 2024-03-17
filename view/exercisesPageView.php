@@ -19,7 +19,7 @@ $result = checkLogin();
 <body>
     <?php
         // Retrieve the message parameter from the URL
-        $message = isset($_GET['msg']) ? $_GET['msg'] : 'myWellness';
+        $message = isset($_GET['msg']) ? $_GET['msg'] : 'relaxationExercise';
     ?>
     
     <header>
@@ -32,8 +32,7 @@ $result = checkLogin();
                 <ul >
                     <li class="<?php echo ($message === 'myWellness' || $message === '') ? 'active' : '';?>"><a href="homePageView.php">My Wellness</a></li>
                     <li class="<?php echo ($message === 'relaxationExercise' || $message === '') ? 'active' : '';?>"><a href="exercisesPageView.php?msg=relaxationExercise">Relaxation and Meditation Hub</a></li>
-                    <li class="<?php echo ($message === 'wellnessTips' || $message === '') ? 'active' : '';?>"><a href="exercisesPageView.php?msg=relaxationExercise"> Wellness Tips</a></li>
-                    <li class="<?php echo ($message === 'aboutUs' || $message === '') ? 'active' : '';?>"><a href="aboutUsView.php?msg=relaxationExercise">About us</a></li>
+                    <li class="<?php echo ($message === 'wellnessTips' || $message === '') ? 'active' : '';?>"><a href="wellness.php?msg=wellnessTips"> Wellness Tips</a></li>
                     <li class="<?php echo ($message === 'profile' || $message === '') ? 'active' : '';?>"><a href=".php?msg=profile">Logout</a></li>
                 </ul>
             </nav>

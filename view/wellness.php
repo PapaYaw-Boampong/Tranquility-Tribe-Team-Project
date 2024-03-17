@@ -5,21 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wellness Page</title>
     <link rel="stylesheet" href="../css/wellness.css">
+    <link rel="stylesheet" href="../css/nav-bar.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="../view/aboutUs.htm">About Us</a></li>
-                <li><a href="../view/login.htm">Login</a></li>
-                <li><a href="../view/register.htm">Sign up</a></li>
-            </ul>
-        </nav>
-        <img src="../assets/team photos/Team Logo 2.png" alt="Tranquility Tribe Logo" class="logo">
-        <h1>Tranquility Tribe Wellness Tips </h1>
-        <p>Tranquility Tribe is dedicated to helping individuals achieve a state of mental and physical peace. Our articles and videos are designed to provide practical tools and resources to promote healthy living.</p>
-    </header>
 
+    <?php
+        // Retrieve the message parameter from the URL
+        $message = isset($_GET['msg']) ? $_GET['msg'] : 'wellness';
+    ?>
+    
+    <header>
+        <div class="nav-bar">
+                <div class="nav-bar-title">
+                    Relaxation Exercises 
+                </div>
+
+                <nav>
+                    <ul >
+                        <li class="<?php echo ($message === 'myWellness' || $message === '') ? 'active' : '';?>"><a href="homePageView.php">My Wellness</a></li>
+                        <li class="<?php echo ($message === 'relaxationExercise' || $message === '') ? 'active' : '';?>"><a href="exercisesPageView.php?msg=relaxationExercise">Relaxation and Meditation Hub</a></li>
+                        <li class="<?php echo ($message === 'wellnessTips' || $message === '') ? 'active' : '';?>"><a href="wellness.php?msg=wellnessTips"> Wellness Tips</a></li>
+                        <li class="<?php echo ($message === 'profile' || $message === '') ? 'active' : '';?>"><a href=".php?msg=profile">Logout</a></li>
+                    </ul>
+                </nav>
+        </div>
+    </header>
 
 <div class="container">
     <div class="tips">
