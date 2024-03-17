@@ -17,7 +17,7 @@
   <main>
     <section class="wellness-plans">
       <h2>My Wellness Plan</h2>
-      <form action="backend.php" method="post" id="goal-form">
+      <form action="../actions/add_goal.php" method="post" id="goal-form">
         <label for="goal">Set Your Goal:</label>
         <input type="text" id="goal" name="goal" placeholder="Enter your goal...">
         <button type="submit">Set Goal</button>
@@ -32,18 +32,18 @@
         </thead>
         <tbody>
           <tr>
-            <td>Goal 1</td>
+            <td><input type="text" value="Goal 1"></td>
             <td><input type="checkbox" id="goal1" name="goal1"></td>
             <td>
-              <button class="edit-btn">Edit</button>
+              <button class="save-btn">Save</button>
               <button class="delete-btn">Delete</button>
             </td>
           </tr>
           <tr>
-            <td>Goal 2</td>
+            <td><input type="text" value="Goal 2"></td>
             <td><input type="checkbox" id="goal2" name="goal2"></td>
             <td>
-              <button class="edit-btn">Edit</button>
+              <button class="save-btn">Save</button>
               <button class="delete-btn">Delete</button>
             </td>
           </tr>
@@ -108,5 +108,19 @@
     <p>&copy; 2024 Personalized Wellness. All rights reserved.</p>
   </footer>
   
+  <!-- JavaScript to show footer when user reaches end of page -->
+  <script>
+    window.addEventListener('scroll', function() {
+        var scrollPosition = window.scrollY;
+        var totalHeight = document.body.scrollHeight - window.innerHeight;
+
+        // Show footer if scrolled to the bottom
+        if (scrollPosition === totalHeight) {
+            document.querySelector('footer').style.display = 'block';
+        } else {
+            document.querySelector('footer').style.display = 'none';
+        }
+    });
+  </script>
 </body>
 </html>

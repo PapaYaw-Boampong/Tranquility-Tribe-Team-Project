@@ -1,42 +1,31 @@
 <?php
-// Check if the form was submitted
+include '../settings/connection.php';
+
+$response = array('success' => false, 'message' => '', 'goal_text' => '');
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve the goal data from the form
-    $goal = $_POST['goal'];
+    $goalName = $_POST['goal'];
 
-    // Validate the goal data (You may add more validation here)
+    $sql = "INSERT INTO Goals (goal_text) VALUES (?)";
 
-    // Database connection parameters
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "tt2025";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $goalName);
+    $stmt->execute();
 
-    try {
-        // Create a new PDO instance
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        // Set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    if ($stmt->affected_rows > 0) {
+        $_SESSION['goal_added'] = true;
+        $response['success'] = true;
+        $response['message'] = $goalName . " added successfully.";
+        $response['goal_text'] = $goalName;
 
-        // Prepare the SQL statement to insert the goal
-        $stmt = $conn->prepare("INSERT INTO WellnessPlans (user_id, goals, creation_date) VALUES (:user_id, :goals, :creation_date)");
-
-        // Bind parameters
-        // Assuming you have a user_id stored in a session variable
-        $user_id = $_SESSION['user_id']; // Make sure to start the session before using session variables
-        $stmt->bindParam(':user_id', $user_id);
-        $stmt->bindParam(':goals', $goal);
-        $stmt->bindParam(':creation_date', date("Y-m-d")); // Set current date as creation date
-
-        // Execute the prepared statement
-        $stmt->execute();
-
-        echo "Goal inserted successfully!";
-    } catch(PDOException $e) {
-        echo "Error: " . $e->getMessage();
+    } else {
+        $response['message'] = "Error: Unable to add chore. Please try again.";
     }
 
-    // Close the database connection
-    $conn = null;
+    $stmt->close();
+} else {
+    $response['message'] = "Wrong request method. Please try again.";
 }
-?>
+
+$conn->close();
+echo json_encode($response);
