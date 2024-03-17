@@ -28,6 +28,7 @@ if (isset($_POST['loginForm'])) {
                 session_start();
                 $_SESSION['email'] = $row['email'];
                 $_SESSION['username'] = $row['username'];
+                $_SESSION['user_id'] = $row['user_id'];
                 echo "Success"; // Corrected typo
                 header("Location: ../view/aboutUsTest.html");
                 exit(); // Added exit() after header redirect
