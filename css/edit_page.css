@@ -7,8 +7,6 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #f0f0f0;
-    animation: changeBackground 18s infinite; /* Apply the animation */
-    animation: changeBackground 18s infinite; /* Apply the animation */
 }
 
 .container {
@@ -154,20 +152,3 @@ body {
     flex: 1;
 }
 
-@keyframes changeBackground {
-    0% {
-        background-image: url("../assets/team_photos/yoga.webp");
-    } 
-    25% {
-        background-image: url("../assets/team_photos/greenJuice.avif");
-    }
-    50% {
-        background-image: url('../assets/team_photos/goodsleep.jpg');
-    }
-    75% {
-        background-image: url('../assets/team_photos/skipping.jpg');
-    }
-    100% {
-        background-image: url('../assets/team_photos/fruits.jpg');
-    }
-}

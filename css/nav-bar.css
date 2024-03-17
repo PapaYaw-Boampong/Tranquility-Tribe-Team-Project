@@ -1,4 +1,5 @@
 .nav-bar{
+    height: 40pt;
     display: flex;
     background-color: #6a1b9a;
     justify-content: space-between;

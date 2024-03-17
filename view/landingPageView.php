@@ -12,7 +12,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="../view/aboutUs.htm">About Us</a></li>
+                <li><a href="aboutUsView.php">About Us</a></li>
                 <li><a href="../login/loginView.php">Login</a></li>
                 <li><a href="../login/registerView.php">Sign up</a></li>
             </ul>

@@ -2,73 +2,119 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
-
-/* header {
+    height: 100vh;
     background-color: #f0f0f0;
-    padding: 20px;
-    text-align: center;
-} */
-
-main {
-    padding: 20px;
-    margin-top: 150px;
+    overflow: hidden;
 }
 
-.profile-pic-container{
-width: 150px;
-height: 150px;
-margin-left: 34%;
-border-radius: 50%; /* Makes the container circular */
-overflow: hidden; /* Ensures the image doesn't exceed the container boundaries */
-margin-bottom: 20px;
-}
-
-
-
-.profile-pic-container img {
-width: 100%;
-height: 100%;
-object-fit: cover; /* Ensures the image covers the entire container */
-}
-
-.profile-info {
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.bioLabel{
-    margin-top: 18px;
-
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-textarea {
+.content{
     width: 100%;
-    height: 50px;
-    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 3;
 }
 
-.submit {
-    background-color: purple;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    margin-left: 43%;
-    cursor: pointer;
+.container,.edit-view {
+
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the items horizontally */
+    background-color: #ffffff; /* White background */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 60%;
+    height: 60%;
+    padding: 8px; /* Add padding to create space around the items */
 }
 
-button:hover {
-    background-color:  #ff69b4;
+.image {
+    flex: 1;
+    text-align: center; /* Center the image horizontally */
 }
 
-/* footer {
-    background-color: #0664df;
-    color: #fff;
+.image img {
+    max-width: 100%; /* Ensuring the image doesn't exceed the container's width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.profile-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    position: relative;
+}
+
+.profile-content h2 {
+    margin-bottom: 15px;
     text-align: center;
-    padding: 10px 0;
-} */
+    color: #800080; /* Purple header text */
+}
+
+.profile-content p {
+    margin-bottom: 15px;
+    font-size: 16pt;
+    padding: 5pt;
+    border-width: 1;
+    border: #363678;
+}
+
+.profile-content .logout-btn {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff69b4; /* Pink button background */
+    color: #fff;
+    font-weight: bold;
+    font-size: 16pt;
+    cursor: pointer;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.profile-content .update-btn {
+
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff69b4; /* Pink button background */
+    color: #fff;
+    font-weight: bold;
+    font-size: 16pt;
+    cursor: pointer;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.profile-content .logout-btn:hover {
+    background-color: #363678; /* Blue button background on hover */
+}
+.profile-content .update-btn:hover {
+    background-color: #363678; /* Blue button background on hover */
+}
+
+.profile-content .update-profile-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.profile-content .update-profile-link a {
+    color: #0000ff; /* Blue link color */
+    text-decoration: none;
+}
+
+.actions{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-bar{
+    height: 40pt;
+    color: #0000ff;
+}
+
+.hidden{
+    display: none;
+}
+

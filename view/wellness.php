@@ -17,7 +17,7 @@
     <header>
         <div class="nav-bar">
                 <div class="nav-bar-title">
-                    Relaxation Exercises 
+                    My wellness
                 </div>
 
                 <nav>
@@ -25,7 +25,7 @@
                         <li class="<?php echo ($message === 'myWellness' || $message === '') ? 'active' : '';?>"><a href="homePageView.php">My Wellness</a></li>
                         <li class="<?php echo ($message === 'relaxationExercise' || $message === '') ? 'active' : '';?>"><a href="exercisesPageView.php?msg=relaxationExercise">Relaxation and Meditation Hub</a></li>
                         <li class="<?php echo ($message === 'wellnessTips' || $message === '') ? 'active' : '';?>"><a href="wellness.php?msg=wellnessTips"> Wellness Tips</a></li>
-                        <li class="<?php echo ($message === 'profile' || $message === '') ? 'active' : '';?>"><a href=".php?msg=profile">Logout</a></li>
+                        <li class="<?php echo ($message === 'profile' || $message === '') ? 'active' : '';?>"><a href="profile.php?msg=profile">Profile</a></li>
                     </ul>
                 </nav>
         </div>
@@ -41,11 +41,12 @@
                 And when it comes to food, colorful fruits and veggies aren't just a feast for the eyes—they're packed with vitamins and antioxidants that support overall health and vitality. 🌈✨
                 So, don't just eat to fill your stomach; eat to nourish your body and uplift your spirit. And don't forget to hydrate like your brain depends on it—because it does! Here's to a life filled with wellness wonders for body and mind! 🌱💧🧠
                 </p>
-        <ul>
-                <img src="../assets/team photos/pexels-anna-tukhfatullina-food-photographerstylist-2664443.jpg" alt="health" class="vertical-space" >
-                <img src="../assets/team photos/pexels-charlotte-may-5947071.jpg" alt="health" class="vertical-space" >
-            </div>
-        </ul>
+            <ul class="image-container">
+                    <img src="../assets/team photos/pexels-anna-tukhfatullina-food-photographerstylist-2664443.jpg" alt="health" class="vertical-space" >
+                    <img src="../assets/team photos/pexels-charlotte-may-5947071.jpg" alt="health" class="vertical-space" >
+            </ul>
+        </div>
+        
 
         <div class="tip-item">
             <h3>Wellness Wonders: Secrets to a Thriving Life</h3>
@@ -53,11 +54,11 @@
                 Did you know? Regular exercise doesn't just improve your physical fitness—it also promotes better sleep quality and duration, leading to more restful nights and energized days. 🌙😴
                 And when it comes to sleep, quality matters just as much as quantity. Creating a calming bedtime routine and carving out a comfortable sleep environment can work wonders for your overall well-being. 🛌💫
                 So, lace up those sneakers, hit the gym, and feel the endorphins flow. And when night falls, tuck yourself into bed with care, knowing that a good night's sleep is the foundation of a vibrant life! 💪💤🌟</p>
-        <ul>
-            <img src="../assets/team photos/pexels-mikhail-nilov-6707078.jpg" alt="hydration">
-            <img src="../assets/team photos/pexels-vlada-karpovich-5357334.jpg" alt="health" >
-            </div>
-        </ul>
+            <ul class="image-container">
+                <img src="../assets/team photos/pexels-mikhail-nilov-6707078.jpg" alt="hydration">
+                <img src="../assets/team photos/pexels-vlada-karpovich-5357334.jpg" alt="health" >
+            </ul>
+        </div>
 
         <div class="tip-item"> 
             <h3>Wellness Wonders: Nature's Bounty for Body and Gut</h3>
@@ -65,12 +66,11 @@
                 Did you know? Eating seasonal foods can also support a diverse and thriving gut microbiome, which plays a crucial role in digestion, immunity, and even mood regulation. 🌿🦠
                 And speaking of gut health, incorporating probiotic-rich foods like yogurt, sauerkraut, and kimchi into your diet can help cultivate a balanced and resilient microbiome. 🥗🥒
                 So, embrace the bounty of each season, savoring the flavors and benefits of nature's harvest. And don't forget to nurture your gut with probiotic foods, creating a harmonious ecosystem within for optimal health and vitality! 🌱🌞🌻</p>
-        <ul>
-                <img src="../assets/team photos/healthy-fresh-rainbow-colored-fruits-and-vegetables-royalty-free-image-1651630109.jpg" alt="workingout">  
-                <img src="../assets/team photos/pexels-askar-abayev-5638268.jpg" alt="health" >  
-            </div>
-            
-        </ul>
+            <ul class="image-container">
+                    <img src="../assets/team photos/healthy-fresh-rainbow-colored-fruits-and-vegetables-royalty-free-image-1651630109.jpg" alt="workingout">  
+                    <img src="../assets/team photos/pexels-askar-abayev-5638268.jpg" alt="health" >  
+            </ul>
+        </div>
 
 
         <div class="tip-item"> 
@@ -80,12 +80,11 @@
                 However, it's essential to be aware of your limits and to prioritize safety and responsibility. Drinking in excess can have adverse effects on both physical and mental health. 🚫🍹
                 Moreover, fostering meaningful social connections and engaging in activities beyond alcohol can enrich your life and provide lasting fulfillment. Whether it's sharing a meal with loved ones or pursuing shared hobbies, nurturing relationships is essential for overall well-being. 🥗👫
                 So, raise your glass to moments of joy and connection, but remember to do so with awareness and balance. Here's to a life lived in harmony, where every sip is savored and every bond cherished! 🌟🍻</p>
-        <ul>
-                <img src="../assets/team photos/pexels-julia-kuzenkov-1974594.jpg" alt="workingout"> 
-                <img src="../assets/team photos/pexels-kindel-media-7149137.jpg" alt="health" >   
-            </div>
-            
-        </ul>
+            <ul class="image-container">
+                    <img src="../assets/team photos/pexels-julia-kuzenkov-1974594.jpg" alt="workingout"> 
+                    <img src="../assets/team photos/pexels-kindel-media-7149137.jpg" alt="health" >   
+            </ul>
+        </div>
 
         <div class="tip-item"> 
             <h3>Wellness Wonders: The Power of Connection, Nature, and Melodies</h3>
@@ -94,12 +93,11 @@
                 And when it comes to nature, spending time outdoors offers a myriad of benefits for both body and mind. From soaking up vitamin D to reducing anxiety and boosting mood, nature has a way of rejuvenating our spirits and grounding us in the present moment. 🌞🌿
                 But let's not forget the power of music—a universal language that speaks to the depths of our souls. Whether it's a soothing melody to calm the mind or an upbeat tune to lift the spirits, music has the ability to transport us to another realm and evoke emotions beyond words. 🎵🎧
                 So, take a moment to reach out to a friend, step outside and feel the sun on your skin, or lose yourself in the rhythm of your favorite song. Embrace these simple yet profound pleasures, and watch as they enrich your life with beauty, connection, and harmony. 💖🌍🎶</p>
-        <ul>
-                <img src="../assets/team photos/pexels-andrea-piacquadio-3775593.jpg" alt="workingout">  
-                <img src="../assets/team photos/pexels-anna-tukhfatullina-food-photographerstylist-2664443.jpg" alt="health" >  
-            </div>
-            
-        </ul>
+            <ul class="image-container">
+                    <img src="../assets/team photos/pexels-andrea-piacquadio-3775593.jpg" alt="workingout">  
+                    <img src="../assets/team photos/pexels-anna-tukhfatullina-food-photographerstylist-2664443.jpg" alt="health" >  
+            </ul>
+        </div>
         
     </div>  
 

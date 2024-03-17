@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function() {
     xhr.send();
 });
 
-
 document.getElementById("registerForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent form submission
     
@@ -104,10 +103,6 @@ document.getElementById("registerForm").addEventListener("submit", function(even
     }
 
     var form = new FormData(this);
-
-    // for (const value of form.values()) {
-    //     console.log(value);
-    // }
 
     // Submit the form data using fetch or AJAX
     fetch('../actions/register_user_action.php', {

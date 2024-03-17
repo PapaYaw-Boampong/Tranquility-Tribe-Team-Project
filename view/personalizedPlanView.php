@@ -10,24 +10,29 @@ $result = checkLogin();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personalized Wellness Plans</title>
     <link rel="stylesheet" href="../css/personalizedPlanCSS.css">
-    <!-- Include Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/nav-bar.css">
 </head>
 <body>
+    <?php
+        // Retrieve the message parameter from the URL
+        $message = isset($_GET['msg']) ? $_GET['msg'] : 'myWellness';
+    ?>
 
     <header>
         <div class="nav-bar">
                 <div class="nav-bar-title">
-                    Relaxation Exercises 
+                    My Wellness 
                 </div>
 
                 <nav>
                     <ul >
-                        <li class="<?php echo ($message === 'myWellness' || $message === '') ? 'active' : '';?>"><a href="homePageView.php">My Wellness</a></li>
+                        <li class="<?php echo ($message === 'myWellness' || $message === '') ? 'active' : '';?>"><a href="personalizedPlanView.php">My Wellness</a></li>
                         <li class="<?php echo ($message === 'relaxationExercise' || $message === '') ? 'active' : '';?>"><a href="exercisesPageView.php?msg=relaxationExercise">Relaxation and Meditation Hub</a></li>
                         <li class="<?php echo ($message === 'wellnessTips' || $message === '') ? 'active' : '';?>"><a href="wellness.php?msg=wellnessTips"> Wellness Tips</a></li>
-                        <li class="<?php echo ($message === 'profile' || $message === '') ? 'active' : '';?>"><a href=".php?msg=profile">Logout</a></li>
+                        <li class="<?php echo ($message === 'profile' || $message === '') ? 'active' : '';?>">
+                            <a href="profile.php?msg=profile">Profile </a>
+                        </li>
                     </ul>
                 </nav>
         </div>
@@ -64,39 +69,6 @@ $result = checkLogin();
         <p>&copy; 2024 Tranquility Tribe</p>
     </footer>
 
-    <script>
-        // Sample data for the pie chart
-        const completedGoals = 5;
-        const remainingGoals = 10 - completedGoals;
-
-        // Create smaller-sized pie chart
-        const ctx = document.getElementById('goal-pie-chart').getContext('2d');
-        const goalPieChart = new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: ['Completed Goals', 'Remaining Goals'],
-                datasets: [{
-                    data: [completedGoals, remainingGoals],
-                    backgroundColor: [
-                        'rgba(54, 162, 235, 0.5)', // Blue for completed goals
-                        'rgba(255, 99, 132, 0.5)', // Red for remaining goals
-                    ],
-                    borderColor: [
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 99, 132, 1)',
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: 'Goal Completion Percentage'
-                },
-                responsive: false, // Disable responsiveness
-                maintainAspectRatio: false, // Disable aspect ratio
-            }
-        });
-    </script>
+    <script src="../js/personlizedPlan.js"></script>
 </body>
 </html>
