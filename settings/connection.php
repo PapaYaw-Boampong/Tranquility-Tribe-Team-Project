@@ -3,7 +3,7 @@
 $servername = "18.133.105.236";
 $database = "TT2025";
 $username = "root";
-$password = "";
+$password = "cs341webtech";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $database);
