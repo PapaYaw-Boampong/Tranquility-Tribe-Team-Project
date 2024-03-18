@@ -201,6 +201,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+var completedGoals;
+var remainingGoals;
 
 // Create smaller-sized pie chart
 const ctx = document.getElementById('goal-pie-chart').getContext('2d');
@@ -233,13 +235,12 @@ const goalPieChart = new Chart(ctx, {
 
 // Fetch data from PHP file when the page loads
 window.addEventListener('DOMContentLoaded', () => {
-    const userId = getUserId(); // Implement your own function to get the user id
     fetchData();
 });
 
 // Function to fetch data from PHP file
 function fetchData() {
-    fetch('your_php_file.php', {
+    fetch('../functions/get_stats.php', {
         method: 'POST'
     })
     .then(response => response.json())
