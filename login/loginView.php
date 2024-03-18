@@ -14,7 +14,7 @@
   </div>
   <div class="form">
     <h2> Tranquility Tribe Account Login</h2>
-    <form action="#" method="post" id="loginForm">
+    <form action="../actions/login_user_action.php" method="post" id="loginForm">
       <label for="email">Email</label>
       <input type="email" id="email" name="email" required>
 
