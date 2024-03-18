@@ -64,11 +64,7 @@
 
          <!-- Display the smaller-sized pie chart here -->
          <canvas id="goal-pie-chart" width="200" height="200"></canvas>
-
-        
         </div>
-    <!-- FILEPATH: /C:/xampp/htdocs/sample_group/Tranquility-Tribe-Team-Project/view/personalizedPlan.htm -->
-    <!-- This section represents the end of a personalized plan in the Tranquility Tribe Team Project. -->
     </section>
     </section>
 

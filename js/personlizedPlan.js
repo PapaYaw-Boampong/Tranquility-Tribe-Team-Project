@@ -199,9 +199,8 @@ document.addEventListener("DOMContentLoaded", function() {
     .catch(error => console.error('Error:', error));
 });
 
-// Sample data for the pie chart
-const completedGoals = 5;
-const remainingGoals = 10 - completedGoals;
+
+
 
 // Create smaller-sized pie chart
 const ctx = document.getElementById('goal-pie-chart').getContext('2d');
@@ -231,14 +230,26 @@ const goalPieChart = new Chart(ctx, {
         maintainAspectRatio: false, // Disable aspect ratio
     }
 });
- window.addEventListener('scroll', function() {
-        var scrollPosition = window.scrollY;
-        var totalHeight = document.body.scrollHeight - window.innerHeight;
 
-        // Show footer if scrolled to the bottom
-        if (scrollPosition === totalHeight) {
-            document.querySelector('footer').style.display = 'block';
-        } else {
-            document.querySelector('footer').style.display = 'none';
-        }
+// Fetch data from PHP file when the page loads
+window.addEventListener('DOMContentLoaded', () => {
+    const userId = getUserId(); // Implement your own function to get the user id
+    fetchData();
 });
+
+// Function to fetch data from PHP file
+function fetchData() {
+    fetch('your_php_file.php', {
+        method: 'POST'
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Update chart data based on fetched data
+        goalPieChart.data.datasets[0].data[0] = data.completedGoals;
+        goalPieChart.data.datasets[0].data[1] = 10 - data.completedGoals;
+        goalPieChart.update();
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
