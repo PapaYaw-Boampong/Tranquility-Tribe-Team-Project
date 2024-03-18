@@ -2,7 +2,6 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('../view/planning2.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -110,11 +109,33 @@ footer {
 
 /* Additional CSS for task statuses */
 
-#goals-table th:nth-child(2),
-#goals-table td:nth-child(2) {
-  text-align: center;
+#goals-table th {
+  display: flex;
+  justify-content:flex-start ;
+  width: 100%;
 }
+
+#goals-table tr {
+    display: flex;
+    justify-content:space-evenly ;
+    width:700pt;
+  }
+
+  #goals-table{
+    width: 90%;
+  }
+
+  #goals-table td {
+    display: flex;
+    justify-content:space-evenly ;
+    width: 100%;
+  }
 
 #goals-table input[type="checkbox"] {
   transform: scale(1.5); /* Increase checkbox size */
 }
+
+#goals-table input[type="text"] {
+    font-size: 16pt;
+    width: 90%;
+  }

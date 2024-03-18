@@ -1,4 +1,9 @@
 <?php
+
+session_start();
+
+$user_id = $_SESSION['user_id'];
+
 include '../settings/connection.php';
 
 $response = array('success' => false, 'goal_text' => '', 'status_text' => 'incomplete');
@@ -6,10 +11,10 @@ $response = array('success' => false, 'goal_text' => '', 'status_text' => 'incom
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $goalName = $_POST['goal'];
 
-    $sql = "INSERT INTO Goals (goal_text) VALUES (?)";
+    $sql = "INSERT INTO Goals (user_id,goal_text) VALUES (?,?)";
 
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $goalName);
+    $stmt->bind_param("is", $user_id, $goalName);
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {

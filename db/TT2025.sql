@@ -42,8 +42,9 @@ INSERT INTO Interests (name) VALUES
 -- Create Users table
 CREATE TABLE Users (
     user_id INT PRIMARY KEY AUTO_INCREMENT,
-    userName VARCHAR(50) NOT NULL UNIQUE,
+    userName VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
+    passwrd VARCHAR(255) NOT NULL, -- Add password field
     firstName VARCHAR(100),
     lastName VARCHAR(100),
     country VARCHAR(50),

@@ -69,7 +69,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
             .then((value) => {
                 // After SweetAlert is dismissed, redirect to another page
                 if (value) {
-                    window.location.href = '../view/personalizedPlanView.php?msg=myWellness';
+                    window.location.href = '../view/personalizedPlan.php?msg=myWellness';
                 }
             });
         } else {

@@ -11,6 +11,11 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+    <?php
+        // Retrieve the message parameter from the URL
+        $message = isset($_GET['msg']) ? $_GET['msg'] : 'myWellness';
+    ?>
+
   <header>
           <div class="nav-bar">
                   <div class="nav-bar-title">
@@ -19,7 +24,7 @@
 
                   <nav>
                       <ul >
-                          <li class="<?php echo ($message === 'myWellness' || $message === '') ? 'active' : '';?>"><a href="personalizedPlanView.php">My Wellness</a></li>
+                          <li class="<?php echo ($message === 'myWellness' || $message === '') ? 'active' : '';?>"><a href="personalizedPlan.php">My Wellness</a></li>
                           <li class="<?php echo ($message === 'relaxationExercise' || $message === '') ? 'active' : '';?>"><a href="exercisesPageView.php?msg=relaxationExercise">Relaxation and Meditation Hub</a></li>
                           <li class="<?php echo ($message === 'wellnessTips' || $message === '') ? 'active' : '';?>"><a href="wellness.php?msg=wellnessTips"> Wellness Tips</a></li>
                           <li class="<?php echo ($message === 'profile' || $message === '') ? 'active' : '';?>">
@@ -32,7 +37,7 @@
   <main>
     <section class="wellness-plans">
       <h2>My Wellness Plan</h2>
-      <form action="../actions/add_goal.php" method="post" id="goal-form">
+      <form action="#" method="post" id="goal-form">
         <label for="goal">Set Your Goal:</label>
         <input type="text" id="goal" name="goal" placeholder="Enter your goal...">
         <button type="submit">Set Goal</button>
@@ -46,23 +51,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><input type="text" value="Goal 1"></td>
-            <td><input type="checkbox" id="goal1" name="goal1"></td>
-            <td>
-              <button class="save-btn">Save</button>
-              <button class="delete-btn">Delete</button>
-            </td>
-          </tr>
-          <tr>
-            <td><input type="text" value="Goal 2"></td>
-            <td><input type="checkbox" id="goal2" name="goal2"></td>
-            <td>
-              <button class="save-btn">Save</button>
-              <button class="delete-btn">Delete</button>
-            </td>
-          </tr>
-          <!-- Add more rows for additional goals -->
+        
         </tbody>
       </table>
     </section>
@@ -76,40 +65,6 @@
          <!-- Display the smaller-sized pie chart here -->
          <canvas id="goal-pie-chart" width="200" height="200"></canvas>
 
-        <script>
-          // Sample data for the pie chart
-          const completedGoals = 5;
-          const remainingGoals = 10 - completedGoals;
-  
-          // Create smaller-sized pie chart
-          const ctx = document.getElementById('goal-pie-chart').getContext('2d');
-          const goalPieChart = new Chart(ctx, {
-              type: 'pie',
-              data: {
-                  labels: ['Completed Goals', 'Remaining Goals'],
-                  datasets: [{
-                      data: [completedGoals, remainingGoals],
-                      backgroundColor: [
-                          'rgba(54, 162, 235, 0.5)', // Blue for completed goals
-                          'rgba(255, 99, 132, 0.5)', // Red for remaining goals
-                      ],
-                      borderColor: [
-                          'rgba(54, 162, 235, 1)',
-                          'rgba(255, 99, 132, 1)',
-                      ],
-                      borderWidth: 1
-                  }]
-              },
-              options: {
-                  title: {
-                      display: true,
-                      text: 'Goal Completion Percentage'
-                  },
-                  responsive: false, // Disable responsiveness
-                  maintainAspectRatio: false, // Disable aspect ratio
-              }
-          });
-      </script><!-- Placeholder for charts/graphs -->
         
         </div>
     <!-- FILEPATH: /C:/xampp/htdocs/sample_group/Tranquility-Tribe-Team-Project/view/personalizedPlan.htm -->
@@ -124,18 +79,7 @@
   </footer>
   
   <!-- JavaScript to show footer when user reaches end of page -->
-  <script>
-    window.addEventListener('scroll', function() {
-        var scrollPosition = window.scrollY;
-        var totalHeight = document.body.scrollHeight - window.innerHeight;
-
-        // Show footer if scrolled to the bottom
-        if (scrollPosition === totalHeight) {
-            document.querySelector('footer').style.display = 'block';
-        } else {
-            document.querySelector('footer').style.display = 'none';
-        }
-    });
-  </script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="../js/personlizedPlan.js"></script>
 </body>
 </html>

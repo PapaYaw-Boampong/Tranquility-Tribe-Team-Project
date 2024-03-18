@@ -1,27 +1,42 @@
 <?php
+// Include the database connection file
+require_once '../settings/connection.php';
+
+// Check if the request method is POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $goal_id = $_POST['goal_id']; // Assuming you're passing goal_id in the form
+    // Get the raw JSON data from the request body
+    $json_data = file_get_contents("php://input");
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "tt2025";
+    // Decode the JSON data into an associative array
+    $data = json_decode($json_data, true);
 
-    try {
-        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $stmt = $conn->prepare("DELETE FROM WellnessPlans WHERE plan_id = :goal_id");
-
-        $stmt->bindParam(':goal_id', $goal_id);
-
-        $stmt->execute();
-
-        echo "Goal deleted successfully!";
-    } catch(PDOException $e) {
-        echo "Error: " . $e->getMessage();
+    // Check if the JSON data is valid
+    if ($data === null) {
+        // JSON data is invalid, send error response
+        http_response_code(400); // Bad Request
+        echo json_encode(array("error" => "Invalid JSON data"));
+        exit;
     }
 
-    $conn = null;
+    // Extract goal_id from the JSON data
+    $goal_id = $data['goal_Id'];
+
+    try {
+        // Prepare the SQL statement to delete the goal
+        $stmt = $conn->prepare("DELETE FROM Goals WHERE goal_id = ?");
+
+        
+        $stmt->bind_param("i", $goal_id);
+
+        // Execute the SQL statement
+        $stmt->execute();
+
+        // Send success response
+        echo json_encode(array("message" => "Goal deleted successfully"));
+    } catch(PDOException $e) {
+        // Send error response
+        http_response_code(500); // Internal Server Error
+        echo json_encode(array("error" => "Error deleting goal: " . $e->getMessage()));
+    }
 }
-?>
+

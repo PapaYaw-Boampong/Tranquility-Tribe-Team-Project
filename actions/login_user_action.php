@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['username'] = $row['userName'];
-
+    
             // Return success response
             http_response_code($responseCodes['success']);
             echo json_encode(['message' => 'Login successful']);
